@@ -3,11 +3,11 @@ import RPi.GPIO as GPIO
 import time
 
 # Pin Definitons:
-pwmPin = 24# Broadcom pin 18 (P1 pin 12)
+pwmPin = 24 # Broadcom pin 18 (P1 pin 12)
 ledPin = 23 # Broadcom pin 23 (P1 pin 16)
 butPin = 17 # Broadcom pin 17 (P1 pin 11)
 
-dc = 95 # duty cycle (0-100) for PWM pin
+dc = 95	6 # duty cycle (0-100) for PWM pin
 
 # Pin Setup:
 GPIO.setmode(GPIO.BCM) # Broadcom pin-numbering scheme
@@ -27,10 +27,10 @@ pwm.start(dc)
 print("Here we go! Press CTRL+C to exit")
 try:
     while 1:
-        if GPIO.input(butPin): # button is released
-            pwm.ChangeDutyCycle(dc)
-            GPIO.output(ledPin, GPIO.LOW)
-        else: # button is pressed:
+       # if GPIO.input(butPin): # button is released
+       #     pwm.ChangeDutyCycle(dc)
+       #     GPIO.output(ledPin, GPIO.LOW)
+        #else: # button is pressed:
             pwm.ChangeDutyCycle(100-dc)
             GPIO.output(ledPin, GPIO.HIGH)
             time.sleep(0.075)
