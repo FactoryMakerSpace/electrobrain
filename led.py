@@ -20,7 +20,7 @@ red.start(100)              # red fully on (100%)
 # now the fun starts, we'll vary the duty cycle to   
 # dim/brighten the leds, so one is bright while the other is dim  
   
-pause_time = 0.002           # you can change this to slow down/speed up  
+pause_time = 0.04           # you can change this to slow down/speed up  
   
 try:  
     while True:  
