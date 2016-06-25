@@ -7,7 +7,8 @@ pwmPin = 24 # Broadcom pin 18 (P1 pin 12)
 ledPin = 23 # Broadcom pin 23 (P1 pin 16)
 butPin = 17 # Broadcom pin 17 (P1 pin 11)
 
-dc = 95	6 # duty cycle (0-100) for PWM pin
+#dc = 95	6 # duty cycle (0-100) for PWM pin
+dc = 5 # duty cycle (0-100) for PWM pin
 
 # Pin Setup:
 GPIO.setmode(GPIO.BCM) # Broadcom pin-numbering scheme
