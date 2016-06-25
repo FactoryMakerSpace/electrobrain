@@ -26,13 +26,20 @@ try:
     while True:  
         for i in range(15,101,5):      # 101 because it stops when it finishes 100  
             white.ChangeDutyCycle(i)  
-            white2.ChangeDutyCycle(i - 3)  
 
             sleep(pause_time)
             #sleep(5)  
         for i in range(100,0,-5):      # from 100 to zero in steps of -1  
             white.ChangeDutyCycle(i)  
-            white2.ChangeDutyCycle(i - 1)  
+
+
+        for i in range(15,101,5):      # 101 because it stops when it finishes 100  
+            white2.ChangeDutyCycle(i)  
+
+            sleep(pause_time)
+            #sleep(5)  
+        for i in range(100,0,-5):      # from 100 to zero in steps of -1  
+            white2.ChangeDutyCycle(i)  
 
             sleep(pause_time)  
     
