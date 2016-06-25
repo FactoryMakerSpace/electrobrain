@@ -27,7 +27,8 @@ try:
         for i in range(50,101):      # 101 because it stops when it finishes 100  
             white.ChangeDutyCycle(i)  
             red.ChangeDutyCycle(100 - i)  
-            sleep(pause_time)  
+            sleep(pause_time)
+            sleep(5)  
         for i in range(100,50,-1):      # from 100 to zero in steps of -1  
             white.ChangeDutyCycle(i)  
             red.ChangeDutyCycle(100 - i)  
