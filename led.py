@@ -32,7 +32,7 @@ try:
             #sleep(5)  
         for i in range(100,0,-5):      # from 100 to zero in steps of -1  
             white.ChangeDutyCycle(i)  
-            white2.ChangeDutyCycle(i + 3)  
+            white2.ChangeDutyCycle(i + 1)  
 
             sleep(pause_time)  
     
