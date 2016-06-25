@@ -27,7 +27,7 @@ try:
             white.ChangeDutyCycle(i)  
             sleep(pause_time)
             #sleep(5)  
-        for i in range(100,15,-5):      # from 100 to zero in steps of -1  
+        for i in range(100,0,-5):      # from 100 to zero in steps of -1  
             white.ChangeDutyCycle(i)  
             sleep(pause_time)  
     
