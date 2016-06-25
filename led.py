@@ -11,8 +11,8 @@ GPIO.setmode(GPIO.BCM)  # choose BCM or BOARD numbering schemes. I use BCM
 GPIO.setup(25, GPIO.OUT)# set GPIO 25 as output for white led  
 GPIO.setup(24, GPIO.OUT)# set GPIO 24 as output for red led  
   
-white = GPIO.PWM(25, 100)    # create object white for PWM on port 25 at 100 Hertz  
-red = GPIO.PWM(24, 100)      # create object red for PWM on port 24 at 100 Hertz  
+white = GPIO.PWM(24, 100)    # create object white for PWM on port 25 at 100 Hertz  
+red = GPIO.PWM(25, 100)      # create object red for PWM on port 24 at 100 Hertz  
   
 white.start(0)              # start white led on 0 percent duty cycle (off)  
 red.start(100)              # red fully on (100%)  
