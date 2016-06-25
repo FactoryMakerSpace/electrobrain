@@ -23,11 +23,11 @@ pause_time = 0.05           # you can change this to slow down/speed up
   
 try:  
     while True:  
-        for i in range(0,101,5):      # 101 because it stops when it finishes 100  
+        for i in range(30,101,5):      # 101 because it stops when it finishes 100  
             white.ChangeDutyCycle(i)  
             sleep(pause_time)
             #sleep(5)  
-        for i in range(100,0,-1):      # from 100 to zero in steps of -1  
+        for i in range(100,30,-5):      # from 100 to zero in steps of -1  
             white.ChangeDutyCycle(i)  
             sleep(pause_time)  
   
