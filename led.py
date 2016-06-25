@@ -15,7 +15,7 @@ white = GPIO.PWM(25, 100)      # create object red for PWM on port 24 at 100 Her
 white2 = GPIO.PWM(24, 100)      # create object red for PWM on port 24 at 100 Hertz  
   
 white.start(100)              # start white led on 0 percent duty cycle (off)  
-white2.start(90)              # start white led on 0 percent duty cycle (off)  
+white2.start(100)              # start white led on 0 percent duty cycle (off)  
   
 # now the fun starts, we'll vary the duty cycle to   
 # dim/brighten the leds, so one is bright while the other is dim  
@@ -36,12 +36,12 @@ try:
             sleep(pause_time)  
 
 
-        for i in range(15,101,5):      # 101 because it stops when it finishes 100  
+        for i in range(15,101,1):      # 101 because it stops when it finishes 100  
             white2.ChangeDutyCycle(i)  
 
             sleep(pause_time)
             #sleep(5)  
-        for i in range(100,0,-5):      # from 100 to zero in steps of -1  
+        for i in range(100,0,-1):      # from 100 to zero in steps of -1  
             white2.ChangeDutyCycle(i)  
 
     
