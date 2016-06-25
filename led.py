@@ -31,6 +31,13 @@ try:
             white.ChangeDutyCycle(i)  
             sleep(pause_time)  
   
+        for i in range(15,101,15):      # 101 because it stops when it finishes 100  
+            white.ChangeDutyCycle(i)  
+            sleep(pause_time)
+            #sleep(5)  
+        for i in range(100,15,-15):      # from 100 to zero in steps of -1  
+            white.ChangeDutyCycle(i)  
+            sleep(pause_time)  
   
 except KeyboardInterrupt:  
     white.stop()            # stop the white PWM output  
