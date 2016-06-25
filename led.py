@@ -31,6 +31,7 @@ try:
             white.ChangeDutyCycle(i)  
             sleep(pause_time)  
   
+  
 except KeyboardInterrupt:  
     white.stop()            # stop the white PWM output  
     GPIO.cleanup()          # clean up GPIO on CTRL+C exit 
