@@ -12,6 +12,7 @@ GPIO.setup(25, GPIO.OUT)# set GPIO 25 as output for white led
 GPIO.setup(24, GPIO.OUT)# set GPIO 24 as output for red led  
   
 white = GPIO.PWM(24, 100)      # create object red for PWM on port 24 at 100 Hertz  
+white2 = GPIO.PWM(25, 100)      # create object red for PWM on port 24 at 100 Hertz  
   
 white.start(100)              # start white led on 0 percent duty cycle (off)  
   
@@ -25,10 +26,14 @@ try:
     while True:  
         for i in range(15,101,5):      # 101 because it stops when it finishes 100  
             white.ChangeDutyCycle(i)  
+            white2.ChangeDutyCycle(i + 3)  
+
             sleep(pause_time)
             #sleep(5)  
         for i in range(100,0,-5):      # from 100 to zero in steps of -1  
             white.ChangeDutyCycle(i)  
+            white2.ChangeDutyCycle(i + 3)  
+
             sleep(pause_time)  
     
 except KeyboardInterrupt:  
