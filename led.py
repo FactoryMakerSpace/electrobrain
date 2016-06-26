@@ -6,7 +6,6 @@
 import RPi.GPIO as GPIO # always needed with RPi.GPIO
 from time import sleep  # pull in the sleep function from time module
 import os
-loads = os.getloadavg()
 GPIO.setmode(GPIO.BCM)  # choose BCM or BOARD numbering schemes. I use BCM
 
 GPIO.setup(25, GPIO.OUT)# set GPIO 25 as output for white led
@@ -22,9 +21,11 @@ red.start(100)              # red fully on (100%)
 # dim/brighten the leds, so one is bright while the other is dim
 
 #pause_time = 0.06           # you can change this to slow down/speed up
-pause_time = loads[1]
 try:
     while True:
+    	loads = os.getloadavg()
+		pause_time = loads[1]
+
         for i in range(15,101,5):      # 101 because it stops when it finishes 100
             white.ChangeDutyCycle(i)
             red.ChangeDutyCycle(100 - (i - 5))
