@@ -25,7 +25,7 @@ try:
     while True:
         loads = os.getloadavg()
         pause_time = loads[1]
-
+        print(pause_time)
         for i in range(15,101,5):      # 101 because it stops when it finishes 100
             white.ChangeDutyCycle(i)
             red.ChangeDutyCycle(100 - (i - 5))
