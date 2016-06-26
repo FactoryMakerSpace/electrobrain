@@ -23,8 +23,8 @@ red.start(100)              # red fully on (100%)
 #pause_time = 0.06           # you can change this to slow down/speed up
 try:
     while True:
-    	loads = os.getloadavg()
-		pause_time = loads[1]
+        loads = os.getloadavg()
+        pause_time = loads[1]
 
         for i in range(15,101,5):      # 101 because it stops when it finishes 100
             white.ChangeDutyCycle(i)
