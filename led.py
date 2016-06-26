@@ -25,6 +25,7 @@ red.start(100)              # red fully on (100%)
 try:
     while True:
         loads = os.getloadavg()
+        print(loads[1])
         pause_time = 1. / loads[1]
         print(pause_time)
         for i in range(15,101,5):      # 101 because it stops when it finishes 100
