@@ -1,6 +1,6 @@
 # electrobrain
 A python script to creatively illuminate "LED copper wire" lights using the Raspberry Pi's PWM GPIO pins. (As the Pi will live inside a head-shaped glass jar, it got the name "electrobrain")
-
+![ElectroBrain](https://www.facebook.com/mmdc.net/videos/979343528845213/)
 I'm starting out with a script by Alex Eames (http://RasPi.tv) that I found for working with PWM on the Raspberry Pi
 	see: http://RasPi.tv/2013/how-to-use-soft-pwm-in-rpi-gpio-pt-2-led-dimming-and-motor-speed-control 
 The script is a simple way to incrementally dim and brighten an LED that's attached to (and powered by)the Pi's PWM-capable GPIO pins.
