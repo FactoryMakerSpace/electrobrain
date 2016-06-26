@@ -20,17 +20,17 @@ red.start(100)              # red fully on (100%)
 # now the fun starts, we'll vary the duty cycle to 
 # dim/brighten the leds, so one is bright while the other is dim
 
-pause_time = 0.02           # you can change this to slow down/speed up
+pause_time = 0.06           # you can change this to slow down/speed up
 
 try:
     while True:
         for i in range(15,101,5):      # 101 because it stops when it finishes 100
             white.ChangeDutyCycle(i)
-            red.ChangeDutyCycle(100 - i)
+            red.ChangeDutyCycle(100 - (i - 5))
             sleep(pause_time)
         for i in range(100,15,-5):      # from 100 to zero in steps of -1
             white.ChangeDutyCycle(i)
-            red.ChangeDutyCycle(100 - i)
+            red.ChangeDutyCycle(100 - (i - 5))
             sleep(pause_time)
 
 except KeyboardInterrupt:
