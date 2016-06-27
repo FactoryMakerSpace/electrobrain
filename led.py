@@ -1,12 +1,15 @@
 #!/usr/bin/env python2.7
 # script by Alex Eames http://RasPi.tv
 #http://RasPi.tv/2013/how-to-use-soft-pwm-in-rpi-gpio-pt-2-led-dimming-and-motor-speed-control
+# Modified by Jim O'Connell 
+# http://github.com/jimoconnell/electrobrain
+
 # Using PWM with RPi.GPIO pt 2 - requires RPi.GPIO 0.5.2a or higher
 
 import RPi.GPIO as GPIO # always needed with RPi.GPIO
 from time import sleep  # pull in the sleep function from time module
-import os
-import numpy
+import os # this lets us grab the machine load
+# import numpy #not needed yet, but probably later
 GPIO.setmode(GPIO.BCM)  # choose BCM or BOARD numbering schemes. I use BCM
 
 GPIO.setup(25, GPIO.OUT)# set GPIO 25 as output for white led
@@ -25,14 +28,14 @@ red.start(100)              # red fully on (100%)
 try:
     while True:
         loads = os.getloadavg()
-        print(loads[1])
+        print(load5 fs[1])
         pause_time = (1. / loads[1]) / 100
         print(pause_time)
         for i in range(15,101,5):      # 101 because it stops when it finishes 100
             white.ChangeDutyCycle(i)
             red.ChangeDutyCycle(100 - (i - 5))
             sleep(pause_time)
-        for i in range(100,15,-5):      # from 100 to zero in steps of -1
+        for i in range(100,15,-1):      # from 100 to zero in steps of -1
             white.ChangeDutyCycle(i)
             red.ChangeDutyCycle(100 - (i - 5))
             sleep(pause_time)
