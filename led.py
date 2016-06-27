@@ -43,7 +43,7 @@ try:
 
 ######### RED SECTION 
         for i in range(15,101,5):      # 101 because it stops when it finishes 100
-            red.ChangeDutyCycle(100 - (i - randint(1, 5))
+            red.ChangeDutyCycle(100 - (i - randint(1, 5)))
             sleep(pause_time)
         for i in range(100,15,-1):      # from 100 to zero in steps of -1
             red.ChangeDutyCycle(100 - (i - randint(1, 5)))
