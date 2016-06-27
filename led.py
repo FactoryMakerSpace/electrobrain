@@ -9,6 +9,7 @@
 import RPi.GPIO as GPIO # always needed with RPi.GPIO
 from time import sleep  # pull in the sleep function from time module
 import os # this lets us grab the machine load
+from random import randint
 # import numpy #not needed yet, but probably later
 GPIO.setmode(GPIO.BCM)  # choose BCM or BOARD numbering schemes. I use BCM
 
@@ -37,7 +38,7 @@ try:
             sleep(pause_time)
         for i in range(100,15,-1):      # from 100 to zero in steps of -1
             white.ChangeDutyCycle(i)
-            red.ChangeDutyCycle(100 - (i - 5))
+            red.ChangeDutyCycle(100 - randint(1, 5))
             sleep(pause_time)
 
 except KeyboardInterrupt:
