@@ -31,14 +31,22 @@ try:
         loads = os.getloadavg()
         print(loads[1])
         pause_time = (1. / loads[1]) / 100
-        #print(pause_time)
+        print(pause_time)
+
+######### WHITE SECTION 
         for i in range(15,101,5):      # 101 because it stops when it finishes 100
             white.ChangeDutyCycle(i)
-            red.ChangeDutyCycle(100 - (i - 5))
             sleep(pause_time)
         for i in range(100,15,-1):      # from 100 to zero in steps of -1
             white.ChangeDutyCycle(i)
-            red.ChangeDutyCycle(100 - randint(1, 5))
+            sleep(pause_time)
+
+######### RED SECTION 
+        for i in range(15,101,5):      # 101 because it stops when it finishes 100
+            red.ChangeDutyCycle(100 - (i - 5))
+            sleep(pause_time)
+        for i in range(100,15,-1):      # from 100 to zero in steps of -1
+            red.ChangeDutyCycle(100 - (i - 5))
             sleep(pause_time)
 
 except KeyboardInterrupt:
