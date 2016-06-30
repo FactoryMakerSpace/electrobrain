@@ -38,18 +38,18 @@ try:
         print(pause_time)
 
 ######### WHITE SECTION
-        for i in arange(0,cpu_pct,5):      # 101 because it stops when it finishes 100
+        for i in numpy.arange(0,cpu_pct,5):      # 101 because it stops when it finishes 100
             white.ChangeDutyCycle(i)
             sleep(pause_time)
-        for i in arange(cpu_pct,0,-1):      # from 100 to zero in steps of -1
+        for i in numpy.arange(cpu_pct,0,-1):      # from 100 to zero in steps of -1
             white.ChangeDutyCycle(i)
             sleep(pause_time)
 
 ######### RED SECTION
-        for i in arange(0,cpu_pct,5):      # 101 because it stops when it finishes 100
+        for i in numpy.arange(0,cpu_pct,5):      # 101 because it stops when it finishes 100
             red.ChangeDutyCycle(100 - (i - randint(1, 5)))
             sleep(pause_time)
-        for i in arange(cpu_pct,0,-1):      # from 100 to zero in steps of -1
+        for i in numpy.arange(cpu_pct,0,-1):      # from 100 to zero in steps of -1
             red.ChangeDutyCycle(100 - (i - randint(1, 5)))
             sleep(pause_time)
 
