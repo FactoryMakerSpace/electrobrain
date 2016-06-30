@@ -1,11 +1,15 @@
 #!/usr/bin/env python2.7
 # script by Alex Eames http://RasPi.tv
 #http://RasPi.tv/2013/how-to-use-soft-pwm-in-rpi-gpio-pt-2-led-dimming-and-motor-speed-control
-# Modified by Jim O'Connell 
+# Modified by Jim O'Connell
 # http://github.com/jimoconnell/electrobrain
 
 # Using PWM with RPi.GPIO pt 2 - requires RPi.GPIO 0.5.2a or higher
-
+import linux_metrics as lm
+print 'procs running: %d' % lm.cpu_stat.procs_running()
+    cpu_pcts = lm.cpu_stat.cpu_percents(sample_duration=1)
+    print 'cpu utilization: %.2f%%' % (100 - cpu_pcts['idle'])
+    
 import RPi.GPIO as GPIO # always needed with RPi.GPIO
 from time import sleep  # pull in the sleep function from time module
 import os # this lets us grab the machine load
@@ -22,7 +26,7 @@ red = GPIO.PWM(24, 100)      # create object red for PWM on port 26 at 100 Hertz
 white.start(0)              # start white led on 0 percent duty cycle (off) #test comment
 red.start(100)              # red fully on (100%)
 
-# now the fun starts, we'll vary the duty cycle to 
+# now the fun starts, we'll vary the duty cycle to
 # dim/brighten the leds, so one is bright while the other is dim
 
 #pause_time = 0.06           # you can change this to slow down/speed up
@@ -33,7 +37,7 @@ try:
         pause_time = (1. / loads[1]) / 100
         print(pause_time)
 
-######### WHITE SECTION 
+######### WHITE SECTION
         for i in range(15,101,5):      # 101 because it stops when it finishes 100
             white.ChangeDutyCycle(i)
             sleep(pause_time)
@@ -41,7 +45,7 @@ try:
             white.ChangeDutyCycle(i)
             sleep(pause_time)
 
-######### RED SECTION 
+######### RED SECTION
         for i in range(15,101,5):      # 101 because it stops when it finishes 100
             red.ChangeDutyCycle(100 - (i - randint(1, 5)))
             sleep(pause_time)
