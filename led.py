@@ -6,10 +6,8 @@
 
 # Using PWM with RPi.GPIO pt 2 - requires RPi.GPIO 0.5.2a or higher
 import linux_metrics as lm
-print 'procs running: %d' % lm.cpu_stat.procs_running()
-    cpu_pcts = lm.cpu_stat.cpu_percents(sample_duration=1)
-    print 'cpu utilization: %.2f%%' % (100 - cpu_pcts['idle'])
-    
+
+
 import RPi.GPIO as GPIO # always needed with RPi.GPIO
 from time import sleep  # pull in the sleep function from time module
 import os # this lets us grab the machine load
@@ -32,24 +30,26 @@ red.start(100)              # red fully on (100%)
 #pause_time = 0.06           # you can change this to slow down/speed up
 try:
     while True:
+        cpu_pcts = lm.cpu_stat.cpu_percents(sample_duration=1)
+        cpu_pct = (100 - cpu_pcts['idle'])
         loads = os.getloadavg()
         print(loads[1])
         pause_time = (1. / loads[1]) / 100
         print(pause_time)
 
 ######### WHITE SECTION
-        for i in range(15,101,5):      # 101 because it stops when it finishes 100
+        for i in range(0,cpu_pct,5):      # 101 because it stops when it finishes 100
             white.ChangeDutyCycle(i)
             sleep(pause_time)
-        for i in range(100,15,-1):      # from 100 to zero in steps of -1
+        for i in range(cpu_pct,0,-1):      # from 100 to zero in steps of -1
             white.ChangeDutyCycle(i)
             sleep(pause_time)
 
 ######### RED SECTION
-        for i in range(15,101,5):      # 101 because it stops when it finishes 100
+        for i in range(0,cpu_pct,5):      # 101 because it stops when it finishes 100
             red.ChangeDutyCycle(100 - (i - randint(1, 5)))
             sleep(pause_time)
-        for i in range(100,15,-1):      # from 100 to zero in steps of -1
+        for i in range(cpu_pct,0,-1):      # from 100 to zero in steps of -1
             red.ChangeDutyCycle(100 - (i - randint(1, 5)))
             sleep(pause_time)
 
