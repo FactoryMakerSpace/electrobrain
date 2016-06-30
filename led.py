@@ -3,6 +3,7 @@
 #http://RasPi.tv/2013/how-to-use-soft-pwm-in-rpi-gpio-pt-2-led-dimming-and-motor-speed-control
 # Modified by Jim O'Connell
 # http://github.com/jimoconnell/electrobrain
+# This is a test comment
 
 # Using PWM with RPi.GPIO pt 2 - requires RPi.GPIO 0.5.2a or higher
 import linux_metrics as lm
