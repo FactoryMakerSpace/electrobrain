@@ -1,4 +1,4 @@
-# electrobrain
+# electrobrain test
 A python script to creatively illuminate "LED copper wire" lights using the Raspberry Pi's PWM GPIO pins. (As the Pi will live inside a head-shaped glass jar, it got the name "electrobrain")
 Quick and crappy video may be available [here] (https://www.facebook.com/mmdc.net/videos/979343528845213/) but I'm not sure if my Facebook settings will allow you to see it.
 [image](electrobrain.jpeg)
