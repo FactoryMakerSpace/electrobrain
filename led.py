@@ -17,7 +17,7 @@ GPIO.setup(25, GPIO.OUT)# set GPIO 25 as output for white led
 GPIO.setup(24, GPIO.OUT)# set GPIO 26 as output for red led
 
 white = GPIO.PWM(25, 100)    # create object white for PWM on port 25 at 100 Hertz
-red = GPIO.PWM(24, 100)      # create object red for PWM on port 26 at 100 Hertz
+red = GPIO.PWM(24, 50)      # create object red for PWM on port 26 at 100 Hertz
 
 white.start(0)              # start white led on 0 percent duty cycle (off) #test comment
 red.start(100)              # red fully on (100%)
@@ -29,9 +29,9 @@ red.start(100)              # red fully on (100%)
 try:
     while True:
         loads = os.getloadavg()
-        print(loads[1])
+        #print(loads[1])
         pause_time = (1. / loads[1]) / 100
-        print(pause_time)
+        #print(pause_time)
 
 ######### WHITE SECTION 
         for i in range(15,101,5):      # 101 because it stops when it finishes 100
