@@ -1,5 +1,13 @@
+# MessageBlinker is a little program that listens to an MQTT channel and 
+# blinks a quick pattern when a message is received, then prints the message.
+
+# MQTT is the protocol we use for communicating
 import paho.mqtt.client as mqtt
+
+# Rpi.GPIO is the library that lets us talk to the GPIO pins
 import RPi.GPIO as GPIO # always needed with RPi.GPIO
+
+# We use sleep(), so let's import it
 from time import sleep  # pull in the sleep function from time module
 
 GPIO.setmode(GPIO.BCM)  # choose BCM or BOARD numbering schemes. I use BCM
@@ -11,15 +19,18 @@ GPIO.setup(24, GPIO.OUT)# set GPIO 25 as output for white led
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
 
+    #Ask the user what topic they want to watch:
+    topic = raw_input("Type a topic/channel:\n")
+    
     # Subscribing in on_connect() means that if we lose the connection and
     # reconnect then subscriptions will be renewed.
-    topic = raw_input("Type a topic/channel:\n")
-    # topic = str(topic)
     client.subscribe(topic)
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
-    print(msg.topic+" "+str(msg.payload))
+    print(msg.topic + " " + str(msg.payload))
+
+    # Blink some lights when a message is received:
     GPIO.output(25,True)
     sleep(.05)
     GPIO.output(25,False)
@@ -31,6 +42,8 @@ def on_message(client, userdata, msg):
     GPIO.output(25,True)
     sleep(.05)
     GPIO.output(25,False)
+
+# wait for new messages:
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
