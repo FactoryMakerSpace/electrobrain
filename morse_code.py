@@ -1,3 +1,8 @@
+# Adapted from https://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/robot/resources/morse_code.py
+# Certain values have been adjusted to make the timings better
+# TODO: Add functionality to adjust the WPM rate 
+# TODO: Smooth out the timings more, as it doesn't blink 'naturally'
+
 import RPi.GPIO as GPIO
 import time
 
