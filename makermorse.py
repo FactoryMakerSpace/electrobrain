@@ -1,6 +1,7 @@
 import paho.mqtt.client as mqtt
 import RPi.GPIO as GPIO # always needed with RPi.GPIO
 from time import sleep  # pull in the sleep function from time module
+import time as time
 
 GPIO.setmode(GPIO.BCM)  # choose BCM or BOARD numbering schemes. I use BCM
 GPIO.setup(25, GPIO.OUT)# set GPIO 25 as output for white led
@@ -54,15 +55,17 @@ CODE = {' ': ' ',
         'Y': '-.--',
         'Z': '--..',
         '_': '..--.-'}
-ledpin = 25
+ledPin = 25
 
 def dot():
+    # print(".")
     GPIO.output(ledPin,1)
     time.sleep(0.2)
     GPIO.output(ledPin,0)
     time.sleep(0.2)
 
 def dash():
+    # print("_")
     GPIO.output(ledPin,1)
     time.sleep(0.5)
     GPIO.output(ledPin,0)
@@ -79,7 +82,9 @@ def on_connect(client, userdata, flags, rc):
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
     print(msg.topic+" "+str(msg.payload))
+
     input = str(msg.payload)
+    print(input)
     for letter in input:
             for symbol in CODE[letter.upper()]:
                 if symbol == '-':
