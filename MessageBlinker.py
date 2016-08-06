@@ -1,3 +1,5 @@
+#! /usr/bin/env python2.7
+
 # MessageBlinker is a little program that listens to an MQTT channel and 
 # blinks a quick pattern when a message is received, then prints the message.
 

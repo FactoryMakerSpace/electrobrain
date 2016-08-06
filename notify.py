@@ -1,3 +1,5 @@
+#! /usr/bin/env python2.7
+
 import pyinotify
 import RPi.GPIO as GPIO
 import time

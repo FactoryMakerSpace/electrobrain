@@ -1,3 +1,5 @@
+#! /usr/bin/env python2.7
+
 # Adapted from https://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/robot/resources/morse_code.py
 # Certain values have been adjusted to make the timings better
 # TODO: Add functionality to adjust the WPM rate 

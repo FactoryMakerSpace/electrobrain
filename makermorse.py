@@ -1,3 +1,5 @@
+#! /usr/bin/env python2.7
+
 import paho.mqtt.client as mqtt
 import RPi.GPIO as GPIO # always needed with RPi.GPIO
 from time import sleep  # pull in the sleep function from time module
