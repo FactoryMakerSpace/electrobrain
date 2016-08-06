@@ -60,16 +60,16 @@ ledPin = 25
 def dot():
     # print(".")
     GPIO.output(ledPin,1)
-    time.sleep(0.2)
+    time.sleep(0.1)
     GPIO.output(ledPin,0)
-    time.sleep(0.2)
+    time.sleep(0.1)
 
 def dash():
     # print("_")
     GPIO.output(ledPin,1)
-    time.sleep(0.5)
+    time.sleep(0.3)
     GPIO.output(ledPin,0)
-    time.sleep(0.2)
+    time.sleep(0.1)
 
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, flags, rc):
@@ -92,7 +92,7 @@ def on_message(client, userdata, msg):
                 elif symbol == '.':
                     dot()
                 else:
-                    time.sleep(0.5)
+                    time.sleep(0.3)
             time.sleep(0.5)
 client = mqtt.Client()
 client.on_connect = on_connect
