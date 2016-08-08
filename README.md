@@ -77,3 +77,18 @@ Then try:
 
 (This uses a public MQTT server located at iot.eclipse.org.)
 
+##makermorse.py
+###Usage:
+From a command line, run the following command:
+
+`python makermorse.py.py`
+
+(The first time you run it, you'll first want to install the MQTT python library with:
+	
+	`sudo pip install paho-mqtt`
+
+###Script details
+
+This script listens to an MQTT topic and converts messages received to Morse code.  
+The message is then flashed 
+By default, it listens to the topic "test/abcd" on the public MQTT server iot.eclipse.org. (Thes values are easily changed in the script.)
