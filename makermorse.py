@@ -17,7 +17,7 @@
 # (You probably only want to change the "dit" value.)
 # a 0.05 sec dit is around 26 wpm
 
-dit = 0.05
+dit = 0.25
 dah = 3 * dit
 lettergap = 3 * dit
 wordgap = 7 * dit
@@ -66,6 +66,7 @@ CODE = {' ': ' ',
         ':': '---...',
         ';': '-.-.-.',
         '?': '..--..',
+        '!': '---.',
         'A': '.-',
         'B': '-...',
         'C': '-.-.',
