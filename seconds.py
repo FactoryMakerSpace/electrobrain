@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# This is a comment by Holly
+# This is a comment by Holly Ward
 
 import locale
 locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
