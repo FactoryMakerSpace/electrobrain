@@ -2,6 +2,7 @@
 # This is a comment by Holly Ward and Jim
 # It is Monday.
 # hi holly this is DJ. feel better soon
+# Hey DJ - Can you add a variable called "xyzzy = 100" after line 14
 
 import locale
 locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
