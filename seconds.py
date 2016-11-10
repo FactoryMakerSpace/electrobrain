@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # This is a comment by Holly Ward and Jim
 # It is Monday.
-# Comment
+# hi holly this is DJ. fell better soon
 
 import locale
 locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
