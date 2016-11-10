@@ -12,6 +12,7 @@ minutes_in_an_hour = 60
 hours_in_a_day = 24
 days_in_a_week = 7
 days_in_a_year = 365
+xyzzy = 100
 
 seconds_in_a_day = seconds_in_a_minute * minutes_in_an_hour * hours_in_a_day
 seconds_in_a_week = seconds_in_a_minute * minutes_in_an_hour * hours_in_a_day * days_in_a_week
