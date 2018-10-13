@@ -1,5 +1,5 @@
 # electrobrain
-##Introduction
+## Introduction
 I've been leading a workshop on beginning programming, Rasperry Pi using Python, and Arduino.  The ages of the participants has ranged from 8 years old, (he's 9 now,) to adult.  This project aims to be a set of programs that are simple, but not simplistic, that do interesting things with the Pi and especially its GPIO pins. 
 
 The original program in this group is a status indicator that I made for my RPi3, which lives under a glass dome, [http://imgur.com/3HmyNV5](http://imgur.com/3HmyNV5) as well as for the web server of waycoolbeans.com, which lives in a glass head. 
@@ -14,7 +14,7 @@ From a command line, run the following command:
 
 (May be called "`_led.py`" in the repository. It can be safely renamed or run as is.)
 
-###Script details
+### Script details
 A python script to creatively illuminate "LED copper wire" lights using the Raspberry Pi's PWM GPIO pins. (As the Pi will live inside a head-shaped glass jar, it got the name "electrobrain")
 Quick and crappy video may be available [here] (https://www.facebook.com/mmdc.net/videos/979343528845213/) but I'm not sure if my Facebook settings will allow you to see it.
 [image](electrobrain.jpeg)
@@ -32,25 +32,25 @@ The glass head we are using is the kind commonly used as a hat stand or for sung
 The goal of this project is to combine several strands of lights to make a passive informational display. So far, I've gotten it to watch system load and have the lights go nuts when the load gets high.
 
 ##morse_code.py
-###Usage:
+### Usage:
 From a command line, run the following command:
 
 `python morse_code.py`
 
-###Script details
+### Script details
 DJ, our 9 year old inventor and I both have a certain fascination with telegraphy and morse code, so I found a script from Cambridge University that converts text to code, then blinks out the message in Morse.  
 
 The original is [here](https://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/robot/resources/morse_code.py) And is licensed under a Creative Commons 3 Share Alike license.
 
 This script, when run, simply prompts the user for a string of text, thich it then flashes out on a GPIO pin.
 
-##MessageBlinker.py
-###Usage:
+## MessageBlinker.py
+### Usage:
 From a command line, run the following command:
 
 `python MessageBlinker.py`
 
-###Script details
+### Script details
 This script is a bit different—it listens to an MQTT server for an incoming message on the topic you specify at runtime.  When it receives a message, it does a triple-blink on two GPIO pins (BCM 24 & 25) and prints out the message to the terminal:
 
 	(The first time you run it, you'll first want to install the MQTT python library with:
@@ -77,8 +77,8 @@ Then try:
 
 (This uses a public MQTT server located at iot.eclipse.org.)
 
-##makermorse.py
-###Usage:
+## makermorse.py
+### Usage:
 From a command line, run the following command:
 
 `python makermorse.py.py`
@@ -87,7 +87,7 @@ From a command line, run the following command:
 	
 	`sudo pip install paho-mqtt`
 
-###Script details
+### Script details
 
 This script listens to an MQTT topic and converts messages received to Morse code.  
 The message is then flashed 
