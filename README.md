@@ -5,8 +5,8 @@ I've been leading a workshop on beginning programming, Rasperry Pi using Python,
 The original program in this group is a status indicator that I made for my RPi3, which lives under a glass dome, [http://imgur.com/3HmyNV5](http://imgur.com/3HmyNV5) as well as for the web server of waycoolbeans.com, which lives in a glass head. 
 
 I've also added a few other python scripts that explore the GPIO output pins. Throughout, I use Broadcom numbering in my code. You'll see it declared as: `GPIO.setmode(GPIO.BCM) `
-##led.py
-###Usage:
+## led.py
+### Usage:
 From a command line, run the following command:
 
 `python led.py`
@@ -31,7 +31,7 @@ The glass head we are using is the kind commonly used as a hat stand or for sung
 
 The goal of this project is to combine several strands of lights to make a passive informational display. So far, I've gotten it to watch system load and have the lights go nuts when the load gets high.
 
-##morse_code.py
+## morse_code.py
 ### Usage:
 From a command line, run the following command:
 
